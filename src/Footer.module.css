@@ -1,0 +1,23 @@
+button{
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    margin-top: 0.3rem;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.footer{
+    background-color: var(--gray-100);
+    justify-content: space-around;
+    padding: 2rem;
+    display: flex;
+}
+
+.footerbuttons{
+    border-top: 1px var(--gray-600) solid;
+    gap: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
