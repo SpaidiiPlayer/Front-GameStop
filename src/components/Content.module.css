@@ -36,7 +36,7 @@
 
 .Cardlist{
     display: flex;
-    justify-content: space-around;
-    margin: 0 20vw;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 6rem;
 }
