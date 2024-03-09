@@ -14,26 +14,6 @@
     --black: black;
 }
 
-.dark{
-    --white: black;
-    --white-weak: rgba(0,0,0, 0.7);
-    --gray-100: #121214;
-    --gray-300: #202024;
-    --gray-400: #29292e;
-    --gray-600: #323238;
-    --gray-700: #00ffff;
-    --gray-800: #8ab3cf;
-    --gray-900: #bdd1de;    /*Usado no background*/
-
-    --green-300: #00B37E;
-    --green-500: #00875f;
-
-    --red-500: #F75A68;
-
-    --yellow: yellow;
-
-    --black: white;
-}
 
 *{
     margin: 0;

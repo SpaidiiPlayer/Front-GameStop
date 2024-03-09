@@ -10,58 +10,58 @@ import { Link } from 'react-router-dom';
 function Content(){
     const cardlist = [{
         id: '1',
-        url: 'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
-        desc: 'Super Mario w',
-        date: '21/11/2019',
-        conservation: 'Bom',
+        cover_url: 'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
+        name: 'Super Mario w',
+        release_year: '21/11/2019',
+        conservation_status: 'Bom',
         console: 'PS2',
     },
     {
         id: '2',
-        url: 'https://archive.org/download/super-mario-moto/screenshot_02.png',
-        desc: 'Super Mario Moto',
-        date: '12/02/1999',
-        conservation: 'Ruim',
+        cover_url: 'https://archive.org/download/super-mario-moto/screenshot_02.png',
+        name: 'Super Mario Moto',
+        release_year: '12/02/1999',
+        conservation_status: 'Ruim',
         console: 'Nintendo Switch',
     },
     {
         id: '3',
-        url: 'https://cdn.sistemawbuy.com.br/arquivos/c30f3cdb5ede193830560f4c44f96b28/produtos/6496190606606/20230623191333-6496190d7c41a_mini.jpg',
-        desc: 'Sonic X',
-        date: '05/03/2000',
-        conservation: 'Aceitável',
+        cover_url: 'https://cdn.sistemawbuy.com.br/arquivos/c30f3cdb5ede193830560f4c44f96b28/produtos/6496190606606/20230623191333-6496190d7c41a_mini.jpg',
+        name: 'Sonic X',
+        release_year: '05/03/2000',
+        conservation_status: 'Aceitável',
         console: 'XboX',
     },
     {
         id: '4',
-        url: 'https://archive.org/download/super-mario-moto/screenshot_02.png',
-        desc: 'Mario Moto',
-        date: '15/04/2003',
-        conservation: 'Novo',
+        cover_url: 'https://archive.org/download/super-mario-moto/screenshot_02.png',
+        name: 'Mario Moto',
+        release_year: '15/04/2003',
+        conservation_status: 'Novo',
         console: 'XboX',
     },
     {
         id: '5',
-        url: 'https://cdn.sistemawbuy.com.br/arquivos/c30f3cdb5ede193830560f4c44f96b28/produtos/6496190606606/20230623191333-6496190d7c41a_mini.jpg',
-        desc: 'Sonic X',
-        date: '05/10/2010',
-        conservation: 'Veterano de Guerra',
+        cover_url: 'https://cdn.sistemawbuy.com.br/arquivos/c30f3cdb5ede193830560f4c44f96b28/produtos/6496190606606/20230623191333-6496190d7c41a_mini.jpg',
+        name: 'Sonic X',
+        drelease_year: '05/10/2010',
+        conservation_status: 'Veterano de Guerra',
         console: 'PSP',
     },
     {
         id: '6',
-        url: 'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
-        desc: 'Super Mario W',
-        date: '10/12/2001',
-        conservation: 'Aceitável',
+        cover_url: 'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
+        name: 'Super Mario W',
+        release_year: '10/12/2001',
+        conservation_status: 'Aceitável',
         console: 'XboX',
     },
     {
         id: '7',
-        url: 'https://cdn.sistemawbuy.com.br/arquivos/c30f3cdb5ede193830560f4c44f96b28/produtos/6496190606606/20230623191333-6496190d7c41a_mini.jpg',
-        desc: 'Sonic X',
-        date: '05/03/2000',
-        conservation: 'Aceitável',
+        cover_url: 'https://cdn.sistemawbuy.com.br/arquivos/c30f3cdb5ede193830560f4c44f96b28/produtos/6496190606606/20230623191333-6496190d7c41a_mini.jpg',
+        name: 'Sonic X',
+        release_year: '05/03/2000',
+        conservation_status: 'Aceitável',
         console: 'XboX',
     }
 
@@ -84,11 +84,11 @@ function Content(){
             {cardlist.map((gamecard, index) => (
                 <>
                     <Card
-                        url={gamecard.url}
+                        cover_url={gamecard.cover_url}
                         id={gamecard.id}
-                        desc={gamecard.desc}
-                        date={gamecard.date}
-                        conservation={gamecard.conservation}
+                        name={gamecard.name}
+                        release_year={gamecard.release_year}
+                        conservation_status={gamecard.conservation_status}
                         console={gamecard.console}
                     />
                 </>

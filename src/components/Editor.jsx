@@ -5,11 +5,11 @@ import React, { useState } from 'react';
 
 function Editor(props){
         const [formData, setFormData] = useState({
-          name: props.location.state.dados.desc,
-          conservation_status: props.location.state.dados.conservation,
+          name: props.location.state.dados.name,
+          conservation_status: props.location.state.dados.conservation_status,
           console: props.location.state.dados.console,
-          release_year: props.location.state.dados.date,
-          cover_url: props.location.state.dados.url,
+          release_year: props.location.state.dados.release_year,
+          cover_url: props.location.state.dados.cover_url,
         });
       
         const handleChange = (event) => {
