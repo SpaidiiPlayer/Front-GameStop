@@ -1,5 +1,5 @@
 import styles from './Content.module.css';
-import { Cards } from './GameCards.jsx'
+import { Card } from './GameCards.jsx'
 import { PlusCircle } from 'phosphor-react';
 import { Funnel } from 'phosphor-react';
 import { PencilSimple } from 'phosphor-react';
@@ -74,16 +74,16 @@ function Content(){
                 <PlusCircle size={24} /> Produtos
             </div>
             <div className={styles.Buttons}>
-                <Link to='/Register'><button>  Filtrar <Funnel size={24} /></button></Link>
+                <button>  Filtrar <Funnel size={24} /></button>
                 <button>Editar <PencilSimple size={24} /></button>
-                <button>Adicionar <Plus size={24} /></button>
+                <Link to='/Register'><button>Adicionar <Plus size={24} /></button></Link>
                 <button>Remover <Minus size={24} /></button>
             </div>
 
             <div className={styles.Cardlist}>
             {cardlist.map((gamecard, index) => (
                 <>
-                    <Cards 
+                    <Card
                         url={gamecard.url}
                         id={gamecard.id}
                         desc={gamecard.desc}

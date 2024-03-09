@@ -10,8 +10,6 @@
     --green-500: #00875f;
 
     --red-500: #F75A68;
-    
-    --yellow: yellow;
 
     --black: black;
 }
@@ -37,21 +35,10 @@
     --black: white;
 }
 
-:focus{
-    outline: transparent;
-    box-shadow: 0 0 0 1px var(--green-500);
-}
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body{
-    background: var(--gray-900);
-    color: var(--gray-300);
-    -webkit-font-smoothing: antialiased;
 }
 
 body, input, textarea, button{

@@ -1,14 +1,15 @@
-import styles from './Register.module.css';
-import { PlusCircle } from 'phosphor-react';
+import styles from './Editor.module.css';
+import { PencilSimple } from 'phosphor-react';
 import React, { useState } from 'react';
 
-function Register(){
+
+function Editor(props){
         const [formData, setFormData] = useState({
-          name: '',
-          conservation_status: '',
-          console: '',
-          release_year: '',
-          cover_url: ''
+          name: props.location.state.dados.desc,
+          conservation_status: props.location.state.dados.conservation,
+          console: props.location.state.dados.console,
+          release_year: props.location.state.dados.date,
+          cover_url: props.location.state.dados.url,
         });
       
         const handleChange = (event) => {
@@ -18,21 +19,14 @@ function Register(){
       
         const handleSubmit = (event) => {
           event.preventDefault();
-          console.log('Dados do formulário:', formData);
-          setFormData({
-            name: '',
-            conservation_status: '',
-            console: '',
-            release_year: '',
-            cover_url: ''
-          })
+          console.log('Dados da edicao:', formData);
         };
       
 
     return(
         <div className={styles.Forms}>
             <div className={styles.Title}>
-                <PlusCircle size={32} /> Cadastro de Produtos
+                <PencilSimple size={32} /> Editor de Produtos
             </div>
 
             <div>
@@ -72,4 +66,4 @@ function Register(){
     );
 }
 
-export default Register;
+export default Editor;
