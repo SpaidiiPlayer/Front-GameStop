@@ -1,4 +1,3 @@
-import './App.module.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Header } from './components/Header.jsx'
 import { Footer } from './components/Footer.jsx'
@@ -20,9 +19,7 @@ export function App(){
         <Route path="/Register" component={Register} />
         <Route path="/Editor" component={Editor} />
       </Switch>
-      <footer> 
-         <Footer />
-      </footer>
+      <Footer />
     </div>
     </Router>
   )

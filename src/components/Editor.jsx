@@ -31,6 +31,11 @@ function Editor(props){
 
             <div>
                 <form onSubmit={handleSubmit}>
+                    
+                    <div className={styles.LineItem}>
+                        ID: {props.location.state.dados.id}
+                    </div>
+
                     <div className={styles.LineItem}>
                         <label id="name" htmlFor="Name">Nome *</label>
                         <input className={styles.Input} type="text" id="Name" name="name" value={formData.name} onChange={handleChange} required />
