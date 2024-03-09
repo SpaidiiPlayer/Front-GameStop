@@ -20,7 +20,9 @@ export function App(){
         <Route path="/Register" component={Register} />
         <Route path="/Editor" component={Editor} />
       </Switch>
-      <Footer />
+      <footer> 
+         <Footer />
+      </footer>
     </div>
     </Router>
   )
