@@ -4,8 +4,10 @@ import { PlusCircle } from 'phosphor-react';
 import { Funnel } from 'phosphor-react';
 import { PencilSimple } from 'phosphor-react';
 import { Plus, Minus} from 'phosphor-react'; 
+import { Link } from 'react-router-dom';
 
-export function Content(){
+
+function Content(){
     const cardlist = [{
         id: '1',
         url: 'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
@@ -72,7 +74,7 @@ export function Content(){
                 <PlusCircle size={24} /> Produtos
             </div>
             <div className={styles.Buttons}>
-                <button>Filtrar <Funnel size={24} /></button>
+                <Link to='/Register'><button>  Filtrar <Funnel size={24} /></button></Link>
                 <button>Editar <PencilSimple size={24} /></button>
                 <button>Adicionar <Plus size={24} /></button>
                 <button>Remover <Minus size={24} /></button>
@@ -98,3 +100,5 @@ export function Content(){
         </div>
     )
 }
+
+export default Content;

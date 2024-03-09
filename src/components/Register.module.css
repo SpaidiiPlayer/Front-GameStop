@@ -1,0 +1,28 @@
+.Forms{
+    background-color: var(--gray-100);
+    color: var(--gray-600);
+
+    margin: 4rem;
+    padding: 1.2rem;
+    border-radius: 40px;
+
+}
+
+.Forms .Title{
+    padding-bottom: 3px;
+    border-bottom: 1px var(--gray-600) solid;
+
+    justify-content: left;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.Forms form{
+    padding: 1rem 10rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
