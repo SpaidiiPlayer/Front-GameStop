@@ -1,63 +1,70 @@
-.Forms{
-    background-color: var(--gray-100);
-    color: var(--gray-600);
+.Forms {
+  background-color: var(--gray-100);
+  color: var(--gray-600);
 
-    margin: 4rem;
-    padding: 1.2rem;
-    border-radius: 40px;
-
+  margin: 4rem;
+  padding: 1.2rem;
+  border-radius: 40px;
 }
 
-.Forms .Title{
-    padding-bottom: 3px;
-    padding-left: 0.6rem;
-    border-bottom: 1px var(--gray-600) solid;
+.Forms .Title {
+  padding-bottom: 3px;
+  padding-left: 0.6rem;
+  border-bottom: 1px var(--gray-600) solid;
 
-    justify-content: left;
-    align-items: center;
-    display: flex;
-    gap: 0.5rem;
-    font-size: 1.1rem;
-    font-weight: 500;
+  justify-content: left;
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
-.Forms form{
-    padding: 1rem 7.7vw;
-    font-size: 1.3rem;
+.Forms form {
+  padding: 1rem 7.7vw;
+  font-size: 1.3rem;
 }
 
-.Forms form .LineItem{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.4rem;
+.Forms form .LineItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
 }
 
-.Forms form .Input{
-    border: none;
-    border-radius: 10px;
-    padding: 0.2rem;
-    width: 30rem;
-    border-bottom: 2px var(--gray-400) solid;
+.Forms form .Input {
+  border: none;
+  border-radius: 10px;
+  padding: 0.2rem;
+  width: 30rem;
+  border-bottom: 2px var(--gray-400) solid;
 }
 
-.Forms form .LineButton{
-    display: flex;
-    justify-content: center;
+.Forms form .LineButton {
+  display: flex;
+  justify-content: center;
 }
 
-.Forms form .Send{
-    margin-top: 2rem;
-    background-color: var(--red-500);
-    transition: 0.3s;
-    justify-content: center;
-    padding: 1rem 2rem;
-    border: 1px var(--gray-600) solid;
-    border-radius: 8px;
-    font-size: 1.4rem;
-    font-weight: 700;
+.Forms form .Send {
+  margin-top: 2rem;
+  background-color: var(--red-500);
+  transition: 0.3s;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border: 1px var(--gray-600) solid;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
-.Forms form .Send:hover{
-    background-color: var(--green-300);
-    cursor: pointer;
+.Forms form .Send:hover {
+  background-color: var(--green-300);
+  cursor: pointer;
+}
+
+.select {
+  border: none;
+  border-radius: 10px;
+  padding: 0.2rem;
+  width: 30rem;
+  border-bottom: 2px var(--gray-400) solid;
 }
