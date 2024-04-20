@@ -1,0 +1,42 @@
+.Content{
+    padding: 1rem;
+    color: var(--gray-600);
+    font: 'Inter';
+}
+
+.Content .Title{
+    font-size: 1.4rem;
+}
+
+.Buttons{
+    border-top: 1px var(--gray-600) solid;
+    justify-content: center;
+    display: flex;
+    gap: 3.5rem;
+    padding: 0.7rem 1rem;
+}
+
+.Buttons button{
+    background-color: var(--gray-100);
+    padding: 0.3rem;
+    width: 240px;
+    height: 75px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px var(--gray-600) solid;
+    
+    transition: 0.5s;
+}
+
+.Buttons button:hover{
+    background-color: var(--gray-600);
+    color: var(--white);
+}
+
+.Cardlist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6rem;
+}
