@@ -18,12 +18,12 @@ export function App(){
     <div>
       <Header />
       <Switch>
-        <Route path="/" exact component={Content} />
+        <Route path="/" exact component={ContentUser} />
         <Route path="/Register" component={Register} />
         <Route path="/Editor" component={Editor} />
         <Route path="/Login" component={Login} />
         <Route path="/NewAccount" component={NewAccount} />
-        <Route path="/User" component={ContentUser} />
+        <Route path="/Admin" component={Content} />
       </Switch>
       <Footer />
     </div>

@@ -3,7 +3,7 @@ import { Card } from "./GameCards.jsx";
 import { PlusCircle } from "phosphor-react";
 import { Confetti } from "phosphor-react"
 import { useEffect, useState } from "react";
-import { deleteCartridge, getAllCartridges } from "../api/cartridges.js";
+import { getAllCartridges } from "../api/cartridges.js";
 
 function ContentUser() {
   const [cards, setCards] = useState([]);
