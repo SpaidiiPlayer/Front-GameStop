@@ -1,42 +1,114 @@
-.Content{
-    padding: 1rem;
-    color: var(--gray-600);
-    font: 'Inter';
+.Content {
+  padding: 1rem;
+  color: var(--gray-600);
+  font: "Inter";
 }
 
-.Content .Title{
-    font-size: 1.4rem;
+.Content .Title {
+  border-bottom: 1px var(--gray-600) solid;
+
+  font-size: 1.4rem;
 }
 
-.Buttons{
-    border-top: 1px var(--gray-600) solid;
-    justify-content: center;
-    display: flex;
-    gap: 3.5rem;
-    padding: 0.7rem 1rem;
+.Buttons {
+  justify-content: center;
+  display: flex;
+  gap: 3.5rem;
+  border-top: 1px var(--gray-600) solid;
+
+  padding: 0.7rem 1rem;
 }
 
-.Buttons button{
-    background-color: var(--gray-100);
-    padding: 0.3rem;
-    width: 180px;
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border: 1px var(--gray-600) solid;
-    
-    transition: 0.5s;
+.filters {
+  justify-content: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  width: fit-content;
 }
 
-.Buttons button:hover{
-    background-color: var(--gray-600);
-    color: var(--white);
+.Buttons button {
+  background-color: var(--gray-100);
+  padding: 0.3rem;
+  width: 180px;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px var(--gray-600) solid;
+
+  transition: 0.5s;
 }
 
-.Cardlist{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6rem;
+.Buttons button:hover {
+  background-color: var(--gray-600);
+  color: var(--white);
+}
+
+.Cardlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.Switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.Switch .SwitchWapper {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+}
+
+.Switch .SwitchWapper .SwitchButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  background-color: var(--gray-400);
+}
+
+.LineItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Switch .SwitchWapper input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.Switch .SwitchWapper .SwitchButton::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  transition: 0.4s all ease;
+  background-color: aliceblue;
+}
+
+.Switch .SwitchWapper input:checked + .SwitchButton {
+  background-color: var(--green-300);
+}
+
+.Switch .SwitchWapper input:checked + .SwitchButton::before {
+  transform: translateX(26px);
 }

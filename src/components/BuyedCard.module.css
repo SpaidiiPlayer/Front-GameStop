@@ -2,9 +2,9 @@
   border: 1px var(--gray-600) solid;
   border-radius: 10px;
   padding: 1rem;
-  width: 300px;
-  height: 450px;
+  width: 700px;
   transition: 0.3s;
+  display: flex;
 }
 
 .Cards img {
@@ -12,18 +12,7 @@
   height: 225px;
   border-radius: 10px;
   object-fit: cover;
-}
-
-.Cards .Pencil {
-  display: block;
-  background-color: var(--green-300);
-  border-radius: 7px;
-}
-
-.Cards .Trash {
-  display: block;
-  background-color: var(--red-500);
-  border-radius: 7px;
+  max-width: 400px;
 }
 
 .Cards .buy {
@@ -34,6 +23,25 @@
   padding: 10px;
   color: white;
 }
+
 .Cards .buy:hover {
   background-color: var(--green-500);
+}
+
+.cardContent {
+  margin-left: 20px;
+}
+
+.notConfirmed {
+  display: flex;
+  align-items: center;
+  color: red;
+  font-weight: 500;
+}
+
+.confirmed {
+  display: flex;
+  align-items: center;
+  color: var(--green-300);
+  font-weight: 500;
 }

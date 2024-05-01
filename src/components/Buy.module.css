@@ -1,0 +1,111 @@
+.content {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px;
+  margin: auto;
+}
+
+.cartridgeImg {
+  width: auto;
+  height: 400px;
+  object-fit: contain;
+}
+
+.imgContain {
+  border: 5px solid red;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 100px;
+  max-width: 30vw;
+}
+
+.contentSubInfo {
+  background-color: var(--gray-100);
+  padding-top: 50px;
+  width: 50vw;
+  padding-bottom: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.id {
+  color: var(--gray-600);
+}
+
+.buy {
+  background-color: var(--green-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: white;
+}
+.buy:hover {
+  background-color: var(--green-500);
+}
+
+.buy:disabled {
+  opacity: 0.5;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity button {
+  background-color: var(--green-300);
+  transition: 0.3s;
+  justify-content: center;
+  padding: 10px 20px;
+  border-bottom: 2px var(--gray-400) solid;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+}
+
+.quantity input {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 80px;
+  border: none;
+  border-radius: 10px;
+  padding: 0.2rem;
+  border-bottom: 2px var(--gray-400) solid;
+}
+
+.discountHeader {
+  font-size: 15px;
+  color: var(--green-300);
+  font-weight: 700;
+}
+
+.discountPoint {
+  font-size: 15px;
+  color: var(--green-300);
+  font-weight: 700;
+}
+
+.cardInput {
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  width: 300px;
+  border-bottom: 2px var(--gray-400) solid;
+}
+
+.cardInputSmall {
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  width: 100px;
+  border-bottom: 2px var(--gray-400) solid;
+}

@@ -68,3 +68,63 @@
   width: 30rem;
   border-bottom: 2px var(--gray-400) solid;
 }
+
+.Switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 28vw;
+}
+
+.Switch .SwitchWapper {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+}
+
+.Switch .SwitchWapper .SwitchButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  background-color: var(--gray-400);
+}
+
+.LineItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
+
+.Switch .SwitchWapper input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.Switch .SwitchWapper .SwitchButton::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  transition: 0.4s all ease;
+  background-color: aliceblue;
+}
+
+.Switch .SwitchWapper input:checked + .SwitchButton {
+  background-color: var(--green-300);
+}
+
+.Switch .SwitchWapper input:checked + .SwitchButton::before {
+  transform: translateX(26px);
+}

@@ -1,7 +1,8 @@
 import styles from "./Register.module.css";
 import { PlusCircle } from "phosphor-react";
-import React, { useState } from "react";
+import { useState } from "react";
 import { createCartridge } from "../api/cartridges";
+import { useUserFromLocalStorage } from "../lib/useUserFromLocalStorage";
 
 function Register() {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +13,11 @@ function Register() {
     console: "",
     release_year: "",
     cover_url: "",
+    price: 0,
+    quantity: 0,
+    made_in_mari: false,
   });
+  const user = useUserFromLocalStorage();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,18 +26,24 @@ function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsLoading(true);
     createCartridge(formData).then((result) => {
+      setIsLoading(false);
       if (result.status) {
         setErrorMessage(result.message);
         return;
       }
-      window?.location.replace("/");
+      user.type === "CLIENT" && window?.location.replace("/");
+      user.type === "ADMIN" && window?.location.replace("/Admin");
+
       setFormData({
         name: "",
         conservation_status: "",
         console: "",
         release_year: "",
         cover_url: "",
+        price: 0,
+        quantity: 0,
       });
       return;
     });
@@ -55,6 +66,7 @@ function Register() {
               type="text"
               id="Name"
               name="name"
+              placeholder="Nome"
               value={formData.name}
               onChange={handleChange}
               required
@@ -90,6 +102,7 @@ function Register() {
               className={styles.Input}
               type="text"
               id="Console"
+              placeholder="Console"
               name="console"
               value={formData.console}
               onChange={handleChange}
@@ -104,7 +117,7 @@ function Register() {
             <input
               className={styles.Input}
               type="number"
-              placeholder="1977"
+              placeholder="Ano de Lançamento"
               id="Year"
               name="release_year"
               value={formData.release_year}
@@ -124,7 +137,68 @@ function Register() {
               name="cover_url"
               value={formData.cover_url}
               onChange={handleChange}
+              placeholder="URL da Imagem"
             />
+          </div>
+
+          <div className={styles.LineItem}>
+            <label id="price" htmlFor="URL">
+              Preço
+            </label>
+            <input
+              className={styles.Input}
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Preço"
+              value={formData.price}
+              onChange={(event) => {
+                setFormData({
+                  ...formData,
+                  price: parseFloat(event.target.value),
+                });
+              }}
+            />
+          </div>
+
+          <div className={styles.LineItem}>
+            <label id="quantity" htmlFor="URL">
+              Quantity
+            </label>
+            <input
+              className={styles.Input}
+              type="number"
+              id="quantity"
+              name="quantity"
+              placeholder="Quantidade"
+              value={formData.quantity}
+              onChange={(event) => {
+                setFormData({
+                  ...formData,
+                  quantity: parseInt(event.target.value),
+                });
+              }}
+            />
+          </div>
+
+          <div className={styles.LineItem}>
+            <span>Feito em Mari:</span>
+            <label className={styles.Switch}>
+              <div className={styles.SwitchWapper}>
+                <input
+                  type="checkbox"
+                  name="made_in_mari"
+                  onChange={(event) => {
+                    console.log(Boolean(event.target.checked));
+                    setFormData({
+                      ...formData,
+                      made_in_mari: Boolean(event.target.checked),
+                    });
+                  }}
+                />
+                <span className={styles.SwitchButton}></span>
+              </div>
+            </label>
           </div>
           <p style={{ color: "red" }}>
             {errorMessage.length > 0 && `Error: ${errorMessage}`}

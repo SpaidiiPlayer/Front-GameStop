@@ -1,18 +1,21 @@
 import styles from "./Editor.module.css";
 import { PencilSimple } from "phosphor-react";
-import React, { useState } from "react";
+import { useState } from "react";
 import { updateCartridge } from "../api/cartridges";
+import { useUserFromLocalStorage } from "../lib/useUserFromLocalStorage";
 
 function Editor(props) {
+  const user = useUserFromLocalStorage();
   const [formData, setFormData] = useState({
     name: props.location.state.dados.name,
     conservation_status: props.location.state.dados.conservation_status,
     console: props.location.state.dados.console,
     release_year: props.location.state.dados.release_year,
     cover_url: props.location.state.dados.cover_url,
+    quantity: props.location.state.dados.quantity,
+    price: parseFloat(props.location.state.dados.price),
+    made_in_mari: props.location.state.dados.made_in_mari,
   });
-
-  console.log(formData);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -23,7 +26,9 @@ function Editor(props) {
     event.preventDefault();
     updateCartridge(props.location.state.dados.id, formData)
       .then(() => {
-        window.location.replace("/");
+        user?.type === "ADMIN"
+          ? window.location.replace("./Admin")
+          : window.location.replace("/");
         return;
       })
       .catch((error) => {
@@ -122,6 +127,65 @@ function Editor(props) {
               value={formData.cover_url}
               onChange={handleChange}
             />
+          </div>
+
+          <div className={styles.LineItem}>
+            <label id="price" htmlFor="URL">
+              Preço
+            </label>
+            <input
+              className={styles.Input}
+              type="number"
+              id="price"
+              name="price"
+              value={formData.price}
+              onChange={(event) => {
+                setFormData({
+                  ...formData,
+                  price: parseFloat(event.target.value),
+                });
+              }}
+            />
+          </div>
+
+          <div className={styles.LineItem}>
+            <label id="quantity" htmlFor="URL">
+              Quantity
+            </label>
+            <input
+              className={styles.Input}
+              type="number"
+              id="quantity"
+              name="quantity"
+              value={formData.quantity}
+              onChange={(event) => {
+                setFormData({
+                  ...formData,
+                  quantity: parseInt(event.target.value),
+                });
+              }}
+            />
+          </div>
+
+          <div className={styles.LineItem}>
+            <span>Feito em Mari:</span>
+            <label className={styles.Switch}>
+              <div className={styles.SwitchWapper}>
+                <input
+                  type="checkbox"
+                  name="made_in_mari"
+                  checked={formData.made_in_mari}
+                  onChange={(event) => {
+                    console.log(Boolean(event.target.checked));
+                    setFormData({
+                      ...formData,
+                      made_in_mari: Boolean(event.target.checked),
+                    });
+                  }}
+                />
+                <span className={styles.SwitchButton}></span>
+              </div>
+            </label>
           </div>
 
           <div className={styles.LineButton}>

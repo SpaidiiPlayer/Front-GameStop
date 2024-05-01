@@ -1,10 +1,11 @@
 import styles from "./GameCards.module.css";
 import { Link } from "react-router-dom";
-import { PencilSimple } from "phosphor-react";
+import { PencilSimple, ShoppingCart } from "phosphor-react";
 import { Trash } from "phosphor-react";
-import { deleteCartridge } from "../api/cartridges";
+import { useUserFromLocalStorage } from "../lib/useUserFromLocalStorage";
 
 export function Card(props) {
+  const user = useUserFromLocalStorage();
   return (
     <div className={styles.Cards}>
       <img src={props.cover_url} alt="Foto do produto" />
@@ -37,6 +38,9 @@ export function Card(props) {
                 console: props.console,
                 release_year: props.release_year,
                 cover_url: props.cover_url,
+                quantity: props.gamecard.quantity,
+                price: props.gamecard.price,
+                made_in_mari: props.gamecard.made_in_mari,
               },
             },
           }}
@@ -55,6 +59,21 @@ export function Card(props) {
         >
           <Trash size={22} />
         </button>
+      )}
+      <h2>R$ {props?.gamecard?.price}</h2>
+      {user?.type === "CLIENT" && (
+        <Link
+          to={{
+            pathname: "./Buy",
+            state: {
+              ...props.gamecard,
+            },
+          }}
+        >
+          <button className={styles.buy}>
+            COMPRAR <ShoppingCart size={32} />
+          </button>
+        </Link>
       )}
     </div>
   );

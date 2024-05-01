@@ -1,29 +1,31 @@
-:root{
-    --white: white;
-    --white-weak: rgba(255,255,255, 0.85);
-    --gray-100: #e1e1e6;
-    --gray-300: #c4c4cc;
-    --gray-400: #8d8d99;
-    --gray-600: #4E4545;
+:root {
+  --white: white;
+  --white-weak: rgba(255, 255, 255, 0.85);
+  --gray-100: #e1e1e6;
+  --gray-300: #c4c4cc;
+  --gray-400: #8d8d99;
+  --gray-600: #4e4545;
 
-    --green-300: #00B37E;
-    --green-500: #00875f;
-    
+  --green-300: #00b37e;
+  --green-500: #00875f;
 
-    --red-500: #F75A68;
+  --red-500: #f75a68;
 
-    --black: black;
+  --black: black;
 }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-body, input, textarea, button{
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
+body,
+input,
+textarea,
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
 }

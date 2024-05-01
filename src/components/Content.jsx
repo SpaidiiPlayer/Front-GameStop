@@ -5,12 +5,17 @@ import { PencilSimple } from "phosphor-react";
 import { Plus, Minus } from "phosphor-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { deleteCartridge, getAllCartridges } from "../api/cartridges.js";
+import {
+  deleteCartridge,
+  getAllCartridges,
+  getCartridgesLessThan5,
+} from "../api/cartridges.js";
 
 function Content() {
   const [cards, setCards] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [getLessThan5, setLessThan5] = useState(false);
 
   function getCardsFromApi() {
     getAllCartridges().then((allCards) => {
@@ -32,7 +37,40 @@ function Content() {
   return (
     <div className={styles.Content}>
       <div className={styles.Title}>
-        <PlusCircle size={24} /> Produtos
+        <PlusCircle size={24} /> ADMIN | Produtos
+      </div>
+
+      <div className={styles.filters}>
+        <h2> Filtros</h2>
+        <div className={styles.LineItem}>
+          <span>Menos que 5 quantidades</span>
+
+          <label className={styles.Switch}>
+            <div className={styles.SwitchWapper}>
+              <input
+                type="checkbox"
+                name="less_then_5"
+                checked={getLessThan5}
+                onChange={(event) => {
+                  console.log(Boolean(event.target.checked));
+                  if (event.target.checked) {
+                    setLessThan5(true);
+                    getCartridgesLessThan5().then((value) => {
+                      setCards(value.rows);
+                    });
+                  } else {
+                    setLessThan5(false);
+
+                    getAllCartridges().then((value) => {
+                      setCards(value.rows);
+                    });
+                  }
+                }}
+              />
+              <span className={styles.SwitchButton}></span>
+            </div>
+          </label>
+        </div>
       </div>
       <div className={styles.Buttons}>
         <button
@@ -60,7 +98,7 @@ function Content() {
 
       <div className={styles.Cardlist}>
         {cards?.length > 0 &&
-          cards?.map((gamecard, index) => (
+          cards?.map((gamecard) => (
             <>
               <Card
                 key={gamecard.id}
@@ -73,6 +111,7 @@ function Content() {
                 conservation_status={gamecard.conservation_status}
                 console={gamecard.console}
                 onDelete={onDelete}
+                gamecard={gamecard}
               />
             </>
           ))}

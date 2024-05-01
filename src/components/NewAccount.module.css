@@ -1,127 +1,133 @@
 .Forms {
-    background-color: var(--gray-100);
-    color: var(--gray-600);
-  
-    margin: 4rem;
-    padding: 1.2rem;
-    border-radius: 40px;
-  }
-  
-  .Forms .Title {
-    padding-bottom: 3px;
-    padding-left: 0.6rem;
-    border-bottom: 1px var(--gray-600) solid;
-  
-    justify-content: left;
-    align-items: center;
-    display: flex;
-    gap: 0.5rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-  
-  .Forms form {
-    padding: 1rem 7.7vw;
-    font-size: 1.3rem;
-  }
-  
-  .Forms form .LineItem {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.45rem;
-  }
-  
-  .Forms form .Input {
-    border: none;
-    border-radius: 10px;
-    padding: 0.2rem;
-    width: 30rem;
-    border-bottom: 2px var(--gray-400) solid;
-  }
-  
-  .Forms form .LineButton {
-    display: flex;
-    justify-content: center;
-    gap: 0.85rem;
-  }
-  
-  .Forms form .Send {
-    margin-top: 2rem;
-    background-color: var(--gray-400);
-    transition: 0.3s;
-    justify-content: center;
-    padding: 0.7rem 1.5rem;
-    border: 1px var(--gray-600) solid;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--black);
-  }
+  background-color: var(--gray-100);
+  color: var(--gray-600);
 
-  .Forms form .Send:hover {
-    background-color: var(--green-300);
-    cursor: pointer;
-  }
-  
-  .select {
-    border: none;
-    border-radius: 10px;
-    padding: 0.2rem;
-    width: 30rem;
-    border-bottom: 2px var(--gray-400) solid;
-  }
+  margin: 4rem;
+  padding: 1.2rem;
+  border-radius: 40px;
+}
 
-  .Switch {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 28vw;
-  }
+.Forms .Title {
+  padding-bottom: 3px;
+  padding-left: 0.6rem;
+  border-bottom: 1px var(--gray-600) solid;
 
-  .Switch .SwitchWapper {
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    position: relative;
-  }
+  justify-content: left;
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
 
-  .Switch .SwitchWapper .SwitchButton {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 20px;
-    background-color: var(--gray-400);
-  }
+.Forms form {
+  padding: 1rem 7.7vw;
+  font-size: 1.3rem;
+}
 
-  .Switch .SwitchWapper input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
+.Forms form .LineItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.45rem;
+}
 
-  .Switch .SwitchWapper .SwitchButton::before{
-    content: '';
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    left: 4px;
-    bottom: 4px;
-    border-radius: 50%;
-    transition: .4s all ease;
-    background-color: aliceblue;
-  }
+.Input {
+  border: none;
+  border-radius: 10px;
+  padding: 0.2rem;
+  width: 30rem;
+  border-bottom: 2px var(--gray-400) solid;
+  background-color: white;
+  font-size: 18px;
+}
 
-  .Switch .SwitchWapper input:checked + .SwitchButton{
-    background-color: var(--green-300);
+.Forms form .LineButton {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+}
 
-  }
+.Forms form .Send {
+  margin-top: 2rem;
+  background-color: var(--green-300);
+  transition: 0.3s;
+  justify-content: center;
+  padding: 0.7rem 1.5rem;
+  border: 1px var(--gray-600) solid;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--black);
+}
 
-  .Switch .SwitchWapper input:checked + .SwitchButton::before{
-    transform: translateX(26px);
-  }
+.Forms form .Send:hover:disabled {
+  background-color: var(--grey-400);
+}
+
+.Forms form .Send:hover {
+  cursor: pointer;
+  background-color: var(--green-500);
+}
+
+.select {
+  border: none;
+  border-radius: 10px;
+  padding: 0.2rem;
+  width: 30rem;
+  border-bottom: 2px var(--gray-400) solid;
+  background: white;
+}
+
+.Switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 28vw;
+}
+
+.Switch .SwitchWapper {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+}
+
+.Switch .SwitchWapper .SwitchButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  background-color: var(--gray-400);
+}
+
+.Switch .SwitchWapper input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.Switch .SwitchWapper .SwitchButton::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  transition: 0.4s all ease;
+  background-color: aliceblue;
+}
+
+.Switch .SwitchWapper input:checked + .SwitchButton {
+  background-color: var(--green-300);
+}
+
+.Switch .SwitchWapper input:checked + .SwitchButton::before {
+  transform: translateX(26px);
+}

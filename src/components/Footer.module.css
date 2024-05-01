@@ -12,6 +12,7 @@ button {
   justify-content: space-around;
   padding: 2rem;
   display: flex;
+  margin-top: 20%;
 }
 
 .footerbuttons {
